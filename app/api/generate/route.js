@@ -13,6 +13,7 @@ const systemPrompt = `You are a flashcard creator.
 8. Avoid using technical jargon unless necessary.
 9. Make sure the flashcards cover all key points from the text.
 10. Review the flashcards for any grammatical or spelling errors.
+11. Generate only 18 cards.
 
 Return in the following JSON Format
 {
