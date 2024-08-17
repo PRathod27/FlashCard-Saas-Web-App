@@ -22,6 +22,88 @@
   }
   
   .description {
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .ctaButton {
+    padding: 1rem 2rem;
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 2rem;
+  }
+  
+  .features, .pricing {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem 0;
+  }
+  
+  .features h2, .pricing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .featureItem {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .priceCard {
+    border: 1px solid #ddd;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .priceCard h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .priceCard span {
+    font-size: 1.5rem;
+    color: #333;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .ctaButton:hover {
+    background-color: #005bb5;
+  }
+
+.container {
+    padding: 0 2rem;
+  }
+  
+  .main {
+    min-height: 100vh;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
     font-size: 1.5rem;
     color: #555;
   }

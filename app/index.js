@@ -1,15 +1,9 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import styles from '@/app/Home.module.css'
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Flashcard SaaS</title>
-        <meta name="description" content="Create and manage your flashcards easily" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main}>
         <section className={styles.hero}>
           <h1 className={styles.title}>Flashcard SaaS</h1>
