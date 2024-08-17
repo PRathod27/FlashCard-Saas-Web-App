@@ -1,163 +1,105 @@
 .container {
-    padding: 0 2rem;
-  }
-  
-  .main {
-    min-height: 100vh;
-    padding: 4rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .hero {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .title {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-  }
-  
-  .description {
-    padding-bottom: 1rem;
-    font-size: 1.5rem;
-    color: #555;
-  }
-  
-  .ctaButton {
-    padding: 1rem 2rem;
-    background-color: #0070f3;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    margin-top: 2rem;
-  }
-  
-  .features, .pricing {
-    width: 100%;
-    max-width: 800px;
-    margin: 2rem 0;
-  }
-  
-  .features h2, .pricing h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .featureItem {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .priceCard {
-    border: 1px solid #ddd;
-    padding: 2rem;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .priceCard h3 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-  
-  .priceCard span {
-    font-size: 1.5rem;
-    color: #333;
-    display: block;
-    margin-bottom: 1rem;
-  }
-  
-  .ctaButton:hover {
-    background-color: #005bb5;
-  }
+  padding: 0 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
 
-.container {
-    padding: 0 2rem;
-  }
-  
-  .main {
-    min-height: 100vh;
-    padding: 4rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .hero {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .title {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-  }
-  
-  .description {
-    font-size: 1.5rem;
-    color: #555;
-  }
-  
-  .ctaButton {
-    padding: 1rem 2rem;
-    background-color: #0070f3;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    margin-top: 1rem;
-  }
-  
-  .features, .pricing {
-    width: 100%;
-    max-width: 800px;
-    margin: 2rem 0;
-  }
-  
-  .features h2, .pricing h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .featureItem {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .priceCard {
-    border: 1px solid #ddd;
-    padding: 2rem;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .priceCard h3 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-  
-  .priceCard span {
-    font-size: 1.5rem;
-    color: #333;
-    display: block;
-    margin-bottom: 1rem;
-  }
-  
-  .ctaButton:hover {
-    background-color: #005bb5;
-  }
-  
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.description {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  padding: 1rem 2rem;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+
+.features, .pricing {
+  width: 100%;
+  max-width: 800px;
+  margin: 3rem 0;
+}
+
+.features h2, .pricing h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.featureItem {
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+}
+
+.priceCard {
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.priceCard:hover {
+  transform: translateY(-5px);
+}
+
+.priceCard h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.priceCard span {
+  font-size: 1.5rem;
+  color: #333;
+  display: block;
+  margin-bottom: 1rem;
+}

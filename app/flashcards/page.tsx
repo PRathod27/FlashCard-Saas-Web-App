@@ -38,6 +38,7 @@ export default function flashcards() {
     }
 
   return(
+    
     <Container maxWidth = "100vw">
         <Grid container spacing = {3}
         sx = {{

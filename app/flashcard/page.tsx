@@ -23,7 +23,7 @@ export default function Flashcards() {
             if(!user || !search) return;
             const colRef = collection(doc(collection(db, 'users'), user.id),search)
             const docs = await getDocs(colRef)
-            const flashcards = []
+            const flashcards = [];
 
             docs.forEach((doc)=>{
                 flashcards.push({id : doc.id, ...doc.data()})

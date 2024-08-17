@@ -2,8 +2,9 @@
 import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import { Container, DialogActions, DialogContentText, DialogTitle, Box, TextField, Typography} from "@mui/material";
-import {doc, collection, setDoc, getDoc, writeBatch, soc   } from 'firebase/firestore'
+import { Container, DialogActions, DialogContentText, DialogContent, DialogTitle, Box, TextField, Typography, Button ,Dialog} from "@mui/material";
+import {doc, collection, setDoc, getDoc, writeBatch} from 'firebase/firestore'
+import {soc} from '@firebase/firestore'
 
 export default function Generate() {
   const { isLoaded, isSignedIn, user } = useUser();
