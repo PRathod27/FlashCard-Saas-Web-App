@@ -1,11 +1,11 @@
 'use client'
 import { useUser } from "@clerk/nextjs"
 import {useEffect, useState} from "react"
-import { collection, doc, getDoc, setDoc,getDocs } from "firebase/firestore"
+import { collection, doc, getDoc, getDocs } from "firebase/firestore"
 import {db} from '@/firebase'
 import  {useSearchParams} from 'next/navigation'
 
-import { Container, DialogActions, DialogContentText, DialogTitle, Box, Grid, TextField, CardActionArea, CardContent, Typography} from "@mui/material";
+import { Container, Box, Grid,CardActionArea, CardContent, Typography} from "@mui/material";
 
 
 
@@ -44,7 +44,7 @@ export default function Flashcards() {
         return <></>
     
     return(
-        <Container maxWidth = "100vw">
+        <Container sx = {{maxWidth : "100vw"}}>
           <Grid container spacing = {3} sx= {{mt : 4}}>
             {flashcards.map((flashcard, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>

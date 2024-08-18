@@ -26,10 +26,10 @@ Return in the following JSON Format
 
 
 export async function POST (req) {
-    const openai = OpenAI();
+    const openai = new OpenAI();
     const data  = await req.text();
 
-    const completion = await openai.chat.completion.create(
+    const completion = await openai.chat.completions.create(
         {
             messages:[{role: "system", content : systemPrompt}, {role: "user", content: data}], 
             model : 'gpt-3.5-turbo',
@@ -39,5 +39,5 @@ export async function POST (req) {
 
     const flashCards = JSON.parse(completion.choices[0].message.content);
 
-    return NextResponse.json({flashCards});
+    return NextResponse.json(flashCards.flashcards);
 }

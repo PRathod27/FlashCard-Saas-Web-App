@@ -1,6 +1,6 @@
 'use client'
 import { useUser } from "@clerk/nextjs"
-import {use, useState, useEffect} from "react"
+import {useState, useEffect} from "react"
 import { collection, doc, getDoc, setDoc } from "firebase/firestore"
 import {db} from '@/firebase'
 import {useRouter} from 'next/navigation'
@@ -39,7 +39,7 @@ export default function flashcards() {
 
   return(
     
-    <Container maxWidth = "100vw">
+    <Container sx = {{maxWidth:"100vw"}}>
         <Grid container spacing = {3}
         sx = {{
             mt : 4

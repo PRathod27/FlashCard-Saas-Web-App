@@ -1,16 +1,16 @@
-"use client";
+'use client';
 import { useState } from "react";
+import { db } from "@/firebase";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import { Container, DialogActions, DialogContentText, DialogContent, DialogTitle, Box, TextField, Typography, Button ,Dialog} from "@mui/material";
+import { Container, DialogActions, DialogContentText, DialogContent, DialogTitle, Box, TextField, Typography, Button ,Dialog, Paper} from "@mui/material";
 import {doc, collection, setDoc, getDoc, writeBatch} from 'firebase/firestore'
-import {soc} from '@firebase/firestore'
 
 export default function Generate() {
   const { isLoaded, isSignedIn, user } = useUser();
   const [flashcards, setFlashcards] = useState([]);
   const [flipped, setFlipped] = useState([]);
-  const [text, setText] = useState("");
+  const [text, setText] = useState();
   const [name, setName] = useState("");
   const [open, setOpen] = useState(false);
   const router = useRouter();
@@ -21,7 +21,7 @@ export default function Generate() {
       body: text,
     })
       .then((res) => res.json())
-      .then(data > setFlashcards(data));
+      .then((data) > setFlashcards(data));
   };
 
   const handleCardClick = (id) => {
@@ -43,10 +43,10 @@ export default function Generate() {
     if (!name) {
       alert("Please Enter A Name");
       return;
-    }
+      }
 
     const batch = writeBatch(db);
-    const userDocRef = soc(collection(db, "users"), user.id);
+    const userDocRef = doc(collection(db, "users"), user.id);
     const docSnap = await getDoc(userDocRef);
 
     if (docSnap.exists()) {
@@ -74,12 +74,19 @@ export default function Generate() {
 
   return (
     <Container>
-      <form>
+      {/* <form>
         <label>Generate Flashcards</label>
         <input type="textarea"></input>
-
         <button onClick={handleSubmit}>Submit</button>
-      </form>
+      </form> */}
+      <Box sx={{ mt: 4 , mb:6, display:'flex' , flexDirection: "column" , alignItems: 'center'}}>
+        <Typography variant="h4">Generate Flashcards</Typography>
+        <Paper sx={{p :4, width : '100%'}}>
+          <TextField value={text} onAbort={(e) => setText(e.target.value)} label="Enter Text" multiline rows={4} fullWidth variant="outlined" sx = {{ mb:2 }} />
+          
+          <Button variant="contained" onClick={handleSubmit} color="primary" fullWidth>{' '}Submit</Button>
+        </Paper>
+      </Box>
 
       {flashcards.length > 0 && (
         <Box sx={{ mt: 4 }}>
@@ -150,7 +157,7 @@ export default function Generate() {
       )}
 
 
-      <Dialog open = {open} onClose = {handleClose} >
+      <Dialog open = {open} onClose = {handleClose}>
         <DialogTitle>Save Flashcards</DialogTitle>
         <DialogContent> 
             <DialogContentText>

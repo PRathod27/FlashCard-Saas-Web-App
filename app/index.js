@@ -1,14 +1,40 @@
+'use client'
 import Head from 'next/head';
 import styles from '@/app/Home.module.css'
 
 export default function Home() {
+
+  const handleSubmit = async() => {
+    const checkoutSession = await fetch('/api/checkout_sessions', {
+      method: "POST",
+      headers: {
+        origin: 'http://localhost:3000',
+      }
+  })
+
+  const checkout_SessionJson = await checkoutSession.json()
+
+  if(checkoutSession.status === 500) {
+    console.error(checkoutSession.message)
+    return 
+  }
+  const stripe = await getStripe()
+  const {error} = await stripe.redicrectToCheckout({
+    sessionId : checkout_SessionJson.id,
+  })
+
+  if(error) {
+    console.warn(error.message)
+  }
+}
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <section className={styles.hero}>
           <h1 className={styles.title}>Flashcard SaaS</h1>
           <p className={styles.description}>Revolutionize your learning with our AI-powered flashcards.</p>
-          <a href="/checkout" className={styles.ctaButton}>Get Started</a>
+          <a href="/generate" className={styles.ctaButton}>Get Started</a>
         </section>
 
         <section className={styles.features}>
@@ -33,13 +59,13 @@ export default function Home() {
             <h3>Basic Plan</h3>
             <p>Perfect for individuals</p>
             <span>$10/month</span>
-            <a href="/checkout" className={styles.ctaButton}>Subscribe Now</a>
+            <button className={styles.ctaButton}>Subscribe Now</button>
           </div>
           <div className={styles.priceCard}>
             <h3>Pro Plan</h3>
             <p>Ideal for teams</p>
             <span>$30/month</span>
-            <a href="/checkout" className={styles.ctaButton}>Subscribe Now</a>
+            <button className={styles.ctaButton} onClick={handleSubmit}>Subscribe Now</button>
           </div>
         </section>
       </main>
